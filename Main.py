@@ -3,7 +3,13 @@ import funciones as fc
 opc = 0
 
 while opc != 4:
-    opc = fc.menu()
+    try:
+        opc = fc.menu()
+
+        while opc < 1 or opc > 4:
+            opc = int(input('Ingrese una opción válida: '))
+    except:
+        print('Ingrese solo numeros enteros')
 
     match opc:
         case 1:
